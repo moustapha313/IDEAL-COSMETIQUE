@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#123b32" />
+    <meta name="description" content="Gestion des ventes, produits et stocks d'Ideal Cosmetique." />
+    <title>Ideal Cosmetique | Gestion</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#dashboard" aria-label="Ideal Cosmetique, accueil">
+          <span class="brand-mark">I<span>c</span></span>
+          <span class="brand-copy"><strong>ideal</strong><small>COSMETIQUE</small></span>
+        </a>
+        <div class="store-label">BOUTIQUE · DAKAR</div>
+        <nav class="nav-list" aria-label="Navigation principale">
+          <span class="nav-caption">ESPACE DE TRAVAIL</span>
+          <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span>Vue d'ensemble</button>
+          <button class="nav-item" data-view="pos"><span class="nav-icon">＋</span>Point de vente</button>
+          <button class="nav-item" data-view="sales"><span class="nav-icon">↗</span>Ventes <span class="nav-count" id="sales-count">0</span></button>
+          <button class="nav-item" data-view="reports"><span class="nav-icon">▤</span>Rapports</button>
+          <span class="nav-caption nav-caption-spaced">GESTION</span>
+          <button class="nav-item" data-view="products"><span class="nav-icon">◇</span>Produits</button>
+          <button class="nav-item" data-view="inventory"><span class="nav-icon">▤</span>Stocks <span class="nav-dot"></span></button>
+          <button class="nav-item" data-view="clients"><span class="nav-icon">♧</span>Clients</button>
+          <button class="nav-item" data-view="suppliers"><span class="nav-icon">⇄</span>Fournisseurs</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span>Paramètres</button>
+          <div class="profile">
+            <div class="avatar avatar-dark">IC</div>
+            <div class="profile-copy"><strong>Équipe boutique</strong><small>Administrateur</small></div>
+            <span class="profile-more">···</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu icon-button" id="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+          <div class="breadcrumb"><span>Ideal Cosmetique</span><span class="crumb-sep">/</span><strong id="breadcrumb-current">Vue d'ensemble</strong></div>
+          <div class="topbar-actions">
+            <label class="global-search"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="Rechercher un produit, client…" aria-label="Recherche globale" /><kbd>⌘ K</kbd></label>
+            <button class="icon-button notification-button" aria-label="Alertes de stock" data-action="go-inventory">♧<i></i></button>
+            <div class="avatar avatar-light">IC</div>
+          </div>
+        </header>
+        <section id="view-root" class="view-root" aria-live="polite"></section>
+        <footer class="app-footer"><span>Ideal Cosmetique</span><span>Gestion de boutique · Sénégal</span><span>FCFA · XOF</span></footer>
+      </main>
+    </div>
+    <div class="toast-region" id="toast-region" aria-live="polite"></div>
+    <dialog class="app-dialog" id="app-dialog"><div id="dialog-content"></div></dialog>
+  </body>
+</html>
